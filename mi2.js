@@ -222,8 +222,83 @@ father.onmouseleave=function () {
             blook[i].style.display="block";
         }
     }
-    console.log(blook);
-}
+    let back=document.querySelector(".backtop");
+    document.onscroll=function(){
+        if(document.body.scrollTop || document.documentElement.scrollTop>=900){
+            back.style.display="block";
+        }else{
+            back.style.display="none";
+        }
+    }
+    back.onclick=function(){
+        animate(document.body,{scrollTop:0});
+        animate(document.documentElement,{scrollTop:0});
+    }
+
+//    ***************
+//    选项卡
+    let leftjpg=document.querySelectorAll(".leftjpg a");
+    let amaz=document.querySelectorAll(".amaz");
+    for(let i=0;i<leftjpg.length;i++){
+        leftjpg[i].onmouseover=function () {
+            for(let j=0;j<leftjpg.length;j++){
+                amaz[j].style.display="none";
+            }
+            amaz[i].style.display="flex";
+        }
+        leftjpg[i].onmouseout=function () {
+            amaz[i].style.display="none";
+        }
+    }
+//    *****
+//    下拉选项卡
+    let phone=document.querySelectorAll(".bbgg");
+    let xiala=document.querySelectorAll(".downla");
+    console.log(phone);
+    for(let i=0;i<phone.length;i++){
+        phone[i].onmouseover=function() {
+            for (let j = 0; j < xiala.length; j++) {
+                xiala[j].style.height ="230px";
+                xiala[j].style.zIndex = 1;
+            }
+            xiala[i].style.height = "230px";
+            xiala[i].style.zIndex = 999;
+        }
+        phone[i].onmouseout=function(){
+            for (let j=0;j<phone.length;j++){
+                xiala[j].style.height=0;
+                xiala[j].style.zIndex = 1;
+
+            }
+
+        }
+        }
+    }
+
+
+
+        //         xiala[i].style.height=0;
+        //         xiala[i].style.borderTop="none";
+        //     }
+    // for(let i=0;i<8;i++){
+    //     phone[i].onmouseover=function(){
+    //         for(let j=0;j<xiala.length;j++){
+    //             xiala[j].style.height=0;
+    //             xiala[j].style.borderTop="none";
+    //         }
+    //         xiala[i].style.height="230px";
+    //         xiala[i].style.borderTop="1px solid #e0e0e0";
+    //         xiala[i].style.boxShadow="0 3px 4px rgba(0,0,0,0.18)";
+    //
+    //
+    //     }
+    //     phone[i].onmouseout=function(){
+    //         xiala[i].style.height=0;
+    //         xiala[i].style.borderTop="none";
+    //     }
+    // }
+// }
+
 
 
 
